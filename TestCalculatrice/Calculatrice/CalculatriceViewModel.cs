@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -7,17 +8,33 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TestCalculatrice.BDDservice;
 
 namespace TestCalculatrice
 {
     class CalculatriceViewModel :INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyChanged([CallerMemberName] String str = "")
+        // Attribus
+        #region Attribus
+        private FicheUtilisateurs utilisateur;
+
+        public FicheUtilisateurs Utilisateur
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(str));
+            get
+            {
+                return utilisateur;
+            }
+            set
+            {
+                if (utilisateur != value)
+                {
+                    utilisateur = value;
+                    NotifyChanged();
+                }
+            }
         }
+
 
         private Calculatrice myCalculatrice;
 
@@ -30,10 +47,41 @@ namespace TestCalculatrice
             }
         }
 
+        private ObservableCollection<FicheOperations> listeOperation;
+
+        public ObservableCollection<FicheOperations> ListeOperation 
+        {
+            get { return listeOperation; }
+            set
+            {
+                if (listeOperation != value)
+                {
+                    listeOperation = value;
+                    NotifyChanged();
+                }
+            }
+        }
+
+        #endregion Attribus
+
+        //evenement de notification
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyChanged([CallerMemberName] String str = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(str));
+        }
         public CalculatriceViewModel()
         {
+
             myCalculatrice = new Calculatrice();
+            utilisateur = new FicheUtilisateurs();
+            
         }
+
+
+        //command
 
         private ICommand editerZone;
         public ICommand EditerZone
@@ -53,9 +101,6 @@ namespace TestCalculatrice
                 return editerZone;
             }
         }
-
-
-     
 
         private ICommand EditeButon(string number)
         {

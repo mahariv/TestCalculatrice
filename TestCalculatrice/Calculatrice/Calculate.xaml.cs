@@ -18,9 +18,9 @@ namespace TestCalculatrice
     /// <summary>
     /// Logique d'interaction pour Page2.xaml
     /// </summary>
-    public partial class Page2 : Window
+    public partial class Calculate : Window
     {
-        public Page2()
+        public Calculate()
         {
             InitializeComponent();
         }

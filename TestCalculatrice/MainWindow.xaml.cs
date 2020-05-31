@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,23 +21,26 @@ namespace TestCalculatrice
     /// </summary>
     public partial class MainWindow : Window
     {
-        Page2 page;
+        MainCalculatrice calculatrice;
         public MainWindow()
         {
-            InitializeComponent();
+            
+            Loaded += MainWindow_Loaded;
 
-            //Loaded += MainWindow_Loaded;
+            InitializeComponent();
+            
+            
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            calculatrice = new MainCalculatrice();
+            
+            calculatrice.Show();
+            this.Close();
+
         }
 
-        private void OpenCalculatrice_Click(object sender, RoutedEventArgs e)
-        {
-            page = new Page2();
-            page.Show();
-            this.Hide();
-        }
+
     }
 }

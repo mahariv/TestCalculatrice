@@ -1,4 +1,4 @@
-﻿<Window x:Class="TestCalculatrice.Page2"
+﻿<Window x:Class="TestCalculatrice.Calculate"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -34,6 +34,9 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -43,9 +46,26 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <!-- Information et historique -->
+        <Label Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding Utilisateur.Nom}"></Label>
+                <Label Content="{Binding Utilisateur.Prenom}"></Label>
+            </StackPanel>
+        </Label>
+        <ListBox Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5" ItemsSource="{Binding ListeOperation}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="{Binding Operation}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
         <!--ecran-->
         <TextBlock Name="LabelResPrec" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Background="#FFD4CECE" TextAlignment="Right" Text="{Binding MyCalculatrice.PreviouResult}"></TextBlock>
-        <TextBlock Name="LabelSaisie" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="8" Background="#FFF2F2F2" Text="{Binding MyCalculatrice.CurrentResult}"></TextBlock>
+        <TextBlock Name="LabelSaisie" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="8" Background="#FFF2F2F2"  Text="{Binding MyCalculatrice.CurrentResult}" />
         <!--Boutton-->
         <Button Command="{Binding EditerZone}" Grid.Column="0" Grid.Row="2">X</Button>
         <Button Grid.Column="1" Grid.Row="2">X</Button>
