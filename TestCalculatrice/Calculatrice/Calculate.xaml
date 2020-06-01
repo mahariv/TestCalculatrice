@@ -54,6 +54,11 @@
             </StackPanel>
         </Label>
         <ListBox Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5" ItemsSource="{Binding ListeOperation}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                    <EventSetter x:Name="RecupHistoriqueVal" Event="PreviewMouseDoubleClick" Handler="ListBoxItem_PreviewMouseDoubleClick"></EventSetter>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">

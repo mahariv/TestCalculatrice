@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestCalculatrice.BDDservice;
 
 namespace TestCalculatrice
 {
@@ -23,6 +24,14 @@ namespace TestCalculatrice
         public Calculate()
         {
             InitializeComponent();
+        }
+
+        private void ListBoxItem_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ListBoxItem ab = (ListBoxItem)sender;
+            FicheOperations fa = (FicheOperations)ab.Content;
+
+            ((CalculatriceViewModel)this.DataContext).MyCalculatrice.CurrentResult = fa.Operation;
         }
     }
 }

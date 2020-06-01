@@ -29,6 +29,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q3:FicheUtilisateurs" />
+        <xs:element minOccurs="0" name="operation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddOperationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetUtilisateurs">
     <xs:complexType>
       <xs:sequence />
@@ -37,7 +52,7 @@
   <xs:element name="GetUtilisateursResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetUtilisateursResult" nillable="true" type="q3:ArrayOfFicheUtilisateurs" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetUtilisateursResult" nillable="true" type="q4:ArrayOfFicheUtilisateurs" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,7 +66,7 @@
   <xs:element name="GetOperationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetOperationResult" nillable="true" type="q4:ArrayOfFicheOperations" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetOperationResult" nillable="true" type="q5:ArrayOfFicheOperations" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

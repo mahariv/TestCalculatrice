@@ -276,6 +276,12 @@ namespace TestCalculatrice.BDDservice {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<TestCalculatrice.BDDservice.CompositeType> GetDataUsingDataContractAsync(TestCalculatrice.BDDservice.CompositeType composite);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOperation", ReplyAction="http://tempuri.org/IService1/AddOperationResponse")]
+        bool AddOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOperation", ReplyAction="http://tempuri.org/IService1/AddOperationResponse")]
+        System.Threading.Tasks.Task<bool> AddOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUtilisateurs", ReplyAction="http://tempuri.org/IService1/GetUtilisateursResponse")]
         TestCalculatrice.BDDservice.FicheUtilisateurs[] GetUtilisateurs();
         
@@ -330,6 +336,14 @@ namespace TestCalculatrice.BDDservice {
         
         public System.Threading.Tasks.Task<TestCalculatrice.BDDservice.CompositeType> GetDataUsingDataContractAsync(TestCalculatrice.BDDservice.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public bool AddOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation) {
+            return base.Channel.AddOperation(utilisateur, operation);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation) {
+            return base.Channel.AddOperationAsync(utilisateur, operation);
         }
         
         public TestCalculatrice.BDDservice.FicheUtilisateurs[] GetUtilisateurs() {

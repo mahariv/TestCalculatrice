@@ -7,12 +7,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
-  <xs:complexType name="ArrayOfFicheUtilisateurs">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FicheUtilisateurs" nillable="true" type="tns:FicheUtilisateurs" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfFicheUtilisateurs" nillable="true" type="tns:ArrayOfFicheUtilisateurs" />
   <xs:complexType name="FicheUtilisateurs">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
@@ -22,6 +16,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FicheUtilisateurs" nillable="true" type="tns:FicheUtilisateurs" />
+  <xs:complexType name="ArrayOfFicheUtilisateurs">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FicheUtilisateurs" nillable="true" type="tns:FicheUtilisateurs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFicheUtilisateurs" nillable="true" type="tns:ArrayOfFicheUtilisateurs" />
   <xs:complexType name="ArrayOfFicheOperations">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="FicheOperations" nillable="true" type="tns:FicheOperations" />

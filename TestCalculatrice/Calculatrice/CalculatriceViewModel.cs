@@ -17,6 +17,8 @@ namespace TestCalculatrice
 
         // Attribus
         #region Attribus
+
+        // attribus utiliser via les databinding
         private FicheUtilisateurs utilisateur;
 
         public FicheUtilisateurs Utilisateur
@@ -353,6 +355,17 @@ namespace TestCalculatrice
                             Console.WriteLine(ab);
                         }
                         string result = IsNegative(TraitementStackOperation(myCalculatrice.stackOperation));
+
+
+                        using (var entities = new BDDservice.Service1Client())
+                        {
+                            entities.AddOperation(Utilisateur, MyCalculatrice.CurrentResult);
+                            ListeOperation.Clear();
+                            ListeOperation = new ObservableCollection<FicheOperations>(entities.GetOperation(Utilisateur.Nom));
+                        }
+                        
+
+
                         myCalculatrice.PreviouResult = myCalculatrice.CurrentResult;
                         myCalculatrice.CurrentResult = result;
                     });

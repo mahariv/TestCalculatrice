@@ -61,8 +61,11 @@ namespace TestCalculatrice
 
         public MainCalculatriceViewModel()
         {
-            var bdd = new Service1Client();
-            listeUtilisateur = new ObservableCollection<FicheUtilisateurs>(bdd.GetUtilisateurs());
+            using (var bdd = new Service1Client())
+            {
+                listeUtilisateur = new ObservableCollection<FicheUtilisateurs>(bdd.GetUtilisateurs());
+            }
+            Utilisateur = new FicheUtilisateurs();
         }
 
 

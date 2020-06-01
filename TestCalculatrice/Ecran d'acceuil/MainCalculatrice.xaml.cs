@@ -44,10 +44,12 @@ namespace TestCalculatrice
         private void OpenCalculatrice_Click(object sender, RoutedEventArgs e)
         {
             page = new Calculate();
-            var bdd = new Service1Client();
-            String nomUtilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur.Nom;
-            ((CalculatriceViewModel)page.DataContext).Utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
-            ((CalculatriceViewModel)page.DataContext).ListeOperation = new ObservableCollection<FicheOperations>(bdd.GetOperation(nomUtilisateur));
+            using (var bdd = new Service1Client())
+            {
+                String nomUtilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur.Nom;
+                ((CalculatriceViewModel)page.DataContext).Utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
+                ((CalculatriceViewModel)page.DataContext).ListeOperation = new ObservableCollection<FicheOperations>(bdd.GetOperation(nomUtilisateur));
+            }
             page.Show();
             
         }
