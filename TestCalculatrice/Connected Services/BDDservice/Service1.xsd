@@ -16,6 +16,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FicheUtilisateurs" nillable="true" type="tns:FicheUtilisateurs" />
+  <xs:complexType name="FicheOperations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUtilisateurs" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroLigne" type="xs:int" />
+      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FicheOperations" nillable="true" type="tns:FicheOperations" />
   <xs:complexType name="ArrayOfFicheUtilisateurs">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="FicheUtilisateurs" nillable="true" type="tns:FicheUtilisateurs" />
@@ -28,13 +37,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFicheOperations" nillable="true" type="tns:ArrayOfFicheOperations" />
-  <xs:complexType name="FicheOperations">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IdUtilisateurs" type="xs:int" />
-      <xs:element minOccurs="0" name="NumeroLigne" type="xs:int" />
-      <xs:element minOccurs="0" name="Operation" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="FicheOperations" nillable="true" type="tns:FicheOperations" />
 </xs:schema>

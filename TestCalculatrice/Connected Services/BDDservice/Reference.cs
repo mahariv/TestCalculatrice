@@ -282,6 +282,18 @@ namespace TestCalculatrice.BDDservice {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOperation", ReplyAction="http://tempuri.org/IService1/AddOperationResponse")]
         System.Threading.Tasks.Task<bool> AddOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveOperation", ReplyAction="http://tempuri.org/IService1/RemoveOperationResponse")]
+        bool RemoveOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, TestCalculatrice.BDDservice.FicheOperations operation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveOperation", ReplyAction="http://tempuri.org/IService1/RemoveOperationResponse")]
+        System.Threading.Tasks.Task<bool> RemoveOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, TestCalculatrice.BDDservice.FicheOperations operation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAllOperation", ReplyAction="http://tempuri.org/IService1/RemoveAllOperationResponse")]
+        bool RemoveAllOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveAllOperation", ReplyAction="http://tempuri.org/IService1/RemoveAllOperationResponse")]
+        System.Threading.Tasks.Task<bool> RemoveAllOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUtilisateurs", ReplyAction="http://tempuri.org/IService1/GetUtilisateursResponse")]
         TestCalculatrice.BDDservice.FicheUtilisateurs[] GetUtilisateurs();
         
@@ -344,6 +356,22 @@ namespace TestCalculatrice.BDDservice {
         
         public System.Threading.Tasks.Task<bool> AddOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation) {
             return base.Channel.AddOperationAsync(utilisateur, operation);
+        }
+        
+        public bool RemoveOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, TestCalculatrice.BDDservice.FicheOperations operation) {
+            return base.Channel.RemoveOperation(utilisateur, operation);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, TestCalculatrice.BDDservice.FicheOperations operation) {
+            return base.Channel.RemoveOperationAsync(utilisateur, operation);
+        }
+        
+        public bool RemoveAllOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.RemoveAllOperation(utilisateur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveAllOperationAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.RemoveAllOperationAsync(utilisateur);
         }
         
         public TestCalculatrice.BDDservice.FicheUtilisateurs[] GetUtilisateurs() {

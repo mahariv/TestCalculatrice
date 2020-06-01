@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TestCalculatrice"
       mc:Ignorable="d"
       Title="Page2"
-        Height="450" Width="400" MaxHeight="900" MaxWidth="500" MinHeight="450" MinWidth="400">
+        Height="450" Width="400" MaxHeight="900" MaxWidth="500" MinHeight="450" MinWidth="550">
     <Window.DataContext>
         <local:CalculatriceViewModel></local:CalculatriceViewModel>
     </Window.DataContext>
@@ -53,8 +53,8 @@
                 <Label Content="{Binding Utilisateur.Prenom}"></Label>
             </StackPanel>
         </Label>
-        <ListBox Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5" ItemsSource="{Binding ListeOperation}">
-            <ListBox.ItemContainerStyle>
+        <ListBox x:Name="ListeHistory" Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5" ItemsSource="{Binding ListeOperation}">
+            <ListBox.ItemContainerStyle >
                 <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                     <EventSetter x:Name="RecupHistoriqueVal" Event="PreviewMouseDoubleClick" Handler="ListBoxItem_PreviewMouseDoubleClick"></EventSetter>
                 </Style>
@@ -72,7 +72,12 @@
         <TextBlock Name="LabelResPrec" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Background="#FFD4CECE" TextAlignment="Right" Text="{Binding MyCalculatrice.PreviouResult}"></TextBlock>
         <TextBlock Name="LabelSaisie" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="8" Background="#FFF2F2F2"  Text="{Binding MyCalculatrice.CurrentResult}" />
         <!--Boutton-->
-        <Button Command="{Binding EditerZone}" Grid.Column="0" Grid.Row="2">X</Button>
+        <Button Command="{Binding EditerZone}" Grid.Column="0" Grid.Row="2">
+            <StackPanel>
+                <Label>Clear</Label>
+                <Label>Screen</Label>
+            </StackPanel>
+        </Button>
         <Button Grid.Column="1" Grid.Row="2">X</Button>
         <Button Grid.Column="2" Grid.Row="2" Content="1" Command="{Binding Button1}"/>
         <Button Grid.Column="3" Grid.Row="2" Content="2" Command="{Binding Button2}"/>
@@ -81,7 +86,12 @@
         <Button Grid.Column="6" Grid.Row="2">X</Button>
         <Button Grid.Column="7" Grid.Row="2" Content="Clear" Command="{Binding ButtonClearPrevious}"/>
 
-        <Button Grid.Column="0" Grid.Row="3">X</Button>
+        <Button Grid.Column="0" Grid.Row="3" Command="{Binding ButtonClearCurrentHistory}" CommandParameter="{Binding ElementName=ListeHistory, Path=SelectedItem}">
+            <StackPanel>
+                <Label>Clear</Label>
+                <Label>C HIS</Label>
+            </StackPanel>
+        </Button>
         <Button Grid.Column="1" Grid.Row="3">X</Button>
         <Button Grid.Column="2" Grid.Row="3" Content="4" Command="{Binding Button4}"/>
         <Button Grid.Column="3" Grid.Row="3" Content="5" Command="{Binding Button5}"/>
@@ -90,7 +100,12 @@
         <Button Grid.Column="6" Grid.Row="3">X</Button>
         <Button Grid.Column="7" Grid.Row="3">X</Button>
 
-        <Button Grid.Column="0" Grid.Row="4">X</Button>
+        <Button Grid.Column="0" Grid.Row="4" Command="{Binding ButtonClearAllHistory}" CommandParameter="{Binding Utilisateur}">
+            <StackPanel>
+                <Label>Clear</Label>
+                <Label>HIS</Label>
+            </StackPanel>
+        </Button>
         <Button Grid.Column="1" Grid.Row="4">X</Button>
         <Button Grid.Column="2" Grid.Row="4" Content="7" Command="{Binding Button7}"/>
         <Button Grid.Column="3" Grid.Row="4" Content="8" Command="{Binding Button8}"/>

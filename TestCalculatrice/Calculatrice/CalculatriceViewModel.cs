@@ -559,6 +559,46 @@ namespace TestCalculatrice
             }
         }
 
+        private ICommand buttonClearCurrentHistory;
+        public ICommand ButtonClearCurrentHistory
+        {
+            get
+            {
+                if (buttonClearCurrentHistory == null)
+                {
+                    buttonClearCurrentHistory = new RelayCommand<FicheOperations>((operation) =>
+                    {
+                        using (var entities = new Service1Client())
+                        {
+                            entities.RemoveOperation(Utilisateur, operation);
+                            ListeOperation = new ObservableCollection<FicheOperations>(entities.GetOperation(Utilisateur.Nom));
+                        }
+                    });
+                }
+                return buttonClearCurrentHistory;
+            }
+        }
+
+        private ICommand buttonClearAllHistory;
+        public ICommand ButtonClearAllHistory
+        {
+            get
+            {
+                if (buttonClearAllHistory == null)
+                {
+                    buttonClearAllHistory = new RelayCommand<FicheUtilisateurs>((utilisateur) =>
+                    {
+                        using (var entities = new Service1Client())
+                        {
+                            entities.RemoveAllOperation(utilisateur);
+                            ListeOperation = new ObservableCollection<FicheOperations>(entities.GetOperation(Utilisateur.Nom));
+                        }
+                    });
+                }
+                return buttonClearAllHistory;
+            }
+        }
+
         #endregion button of operation
 
         // incomplete

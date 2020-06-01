@@ -44,6 +44,35 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RemoveOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q4:FicheUtilisateurs" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="operation" nillable="true" type="q5:FicheOperations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveOperationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAllOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q6:FicheUtilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAllOperationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveAllOperationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetUtilisateurs">
     <xs:complexType>
       <xs:sequence />
@@ -52,7 +81,7 @@
   <xs:element name="GetUtilisateursResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetUtilisateursResult" nillable="true" type="q4:ArrayOfFicheUtilisateurs" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetUtilisateursResult" nillable="true" type="q7:ArrayOfFicheUtilisateurs" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +95,7 @@
   <xs:element name="GetOperationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetOperationResult" nillable="true" type="q5:ArrayOfFicheOperations" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetOperationResult" nillable="true" type="q8:ArrayOfFicheOperations" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

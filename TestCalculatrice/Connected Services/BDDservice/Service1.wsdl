@@ -25,6 +25,18 @@
   <wsdl:message name="IService1_AddOperation_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddOperationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_RemoveOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveAllOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAllOperation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RemoveAllOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAllOperationResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetUtilisateurs_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUtilisateurs" />
   </wsdl:message>
@@ -49,6 +61,14 @@
     <wsdl:operation name="AddOperation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddOperation" message="tns:IService1_AddOperation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddOperationResponse" message="tns:IService1_AddOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveOperation" message="tns:IService1_RemoveOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveOperationResponse" message="tns:IService1_RemoveOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RemoveAllOperation" message="tns:IService1_RemoveAllOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RemoveAllOperationResponse" message="tns:IService1_RemoveAllOperation_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUtilisateurs">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUtilisateurs" message="tns:IService1_GetUtilisateurs_InputMessage" />
@@ -81,6 +101,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddOperation">
       <soap:operation soapAction="http://tempuri.org/IService1/AddOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperation">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllOperation">
+      <soap:operation soapAction="http://tempuri.org/IService1/RemoveAllOperation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
