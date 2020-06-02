@@ -15,67 +15,6 @@ namespace TestCalculatrice.BDDservice {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/ServiceWCFBDD")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FicheUtilisateurs", Namespace="http://schemas.datacontract.org/2004/07/ServiceWCFBDD")]
     [System.SerializableAttribute()]
     public partial class FicheUtilisateurs : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -260,21 +199,102 @@ namespace TestCalculatrice.BDDservice {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Utilisateurs", Namespace="http://schemas.datacontract.org/2004/07/ServiceWCFBDD")]
+    [System.SerializableAttribute()]
+    public partial class Utilisateurs : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NomField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrenomField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Login {
+            get {
+                return this.LoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
+                    this.LoginField = value;
+                    this.RaisePropertyChanged("Login");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nom {
+            get {
+                return this.NomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomField, value) != true)) {
+                    this.NomField = value;
+                    this.RaisePropertyChanged("Nom");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Prenom {
+            get {
+                return this.PrenomField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrenomField, value) != true)) {
+                    this.PrenomField = value;
+                    this.RaisePropertyChanged("Prenom");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BDDservice.IService1")]
     public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        TestCalculatrice.BDDservice.CompositeType GetDataUsingDataContract(TestCalculatrice.BDDservice.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<TestCalculatrice.BDDservice.CompositeType> GetDataUsingDataContractAsync(TestCalculatrice.BDDservice.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOperation", ReplyAction="http://tempuri.org/IService1/AddOperationResponse")]
         bool AddOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation);
@@ -305,6 +325,36 @@ namespace TestCalculatrice.BDDservice {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOperation", ReplyAction="http://tempuri.org/IService1/GetOperationResponse")]
         System.Threading.Tasks.Task<TestCalculatrice.BDDservice.FicheOperations[]> GetOperationAsync(string nom);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AjoutUtilisateur", ReplyAction="http://tempuri.org/IService1/AjoutUtilisateurResponse")]
+        bool AjoutUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AjoutUtilisateur", ReplyAction="http://tempuri.org/IService1/AjoutUtilisateurResponse")]
+        System.Threading.Tasks.Task<bool> AjoutUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupUtilisateur", ReplyAction="http://tempuri.org/IService1/RecupUtilisateurResponse")]
+        TestCalculatrice.BDDservice.Utilisateurs RecupUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RecupUtilisateur", ReplyAction="http://tempuri.org/IService1/RecupUtilisateurResponse")]
+        System.Threading.Tasks.Task<TestCalculatrice.BDDservice.Utilisateurs> RecupUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerifUtilisateur", ReplyAction="http://tempuri.org/IService1/VerifUtilisateurResponse")]
+        bool VerifUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerifUtilisateur", ReplyAction="http://tempuri.org/IService1/VerifUtilisateurResponse")]
+        System.Threading.Tasks.Task<bool> VerifUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SupprimerUtilisateur", ReplyAction="http://tempuri.org/IService1/SupprimerUtilisateurResponse")]
+        bool SupprimerUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SupprimerUtilisateur", ReplyAction="http://tempuri.org/IService1/SupprimerUtilisateurResponse")]
+        System.Threading.Tasks.Task<bool> SupprimerUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditerUtilisateur", ReplyAction="http://tempuri.org/IService1/EditerUtilisateurResponse")]
+        bool EditerUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditerUtilisateur", ReplyAction="http://tempuri.org/IService1/EditerUtilisateurResponse")]
+        System.Threading.Tasks.Task<bool> EditerUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -332,22 +382,6 @@ namespace TestCalculatrice.BDDservice {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
-        public TestCalculatrice.BDDservice.CompositeType GetDataUsingDataContract(TestCalculatrice.BDDservice.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<TestCalculatrice.BDDservice.CompositeType> GetDataUsingDataContractAsync(TestCalculatrice.BDDservice.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
         public bool AddOperation(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur, string operation) {
@@ -388,6 +422,46 @@ namespace TestCalculatrice.BDDservice {
         
         public System.Threading.Tasks.Task<TestCalculatrice.BDDservice.FicheOperations[]> GetOperationAsync(string nom) {
             return base.Channel.GetOperationAsync(nom);
+        }
+        
+        public bool AjoutUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.AjoutUtilisateur(utilisateur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AjoutUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.AjoutUtilisateurAsync(utilisateur);
+        }
+        
+        public TestCalculatrice.BDDservice.Utilisateurs RecupUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.RecupUtilisateur(utilisateur);
+        }
+        
+        public System.Threading.Tasks.Task<TestCalculatrice.BDDservice.Utilisateurs> RecupUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.RecupUtilisateurAsync(utilisateur);
+        }
+        
+        public bool VerifUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.VerifUtilisateur(utilisateur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerifUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.VerifUtilisateurAsync(utilisateur);
+        }
+        
+        public bool SupprimerUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.SupprimerUtilisateur(utilisateur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SupprimerUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.SupprimerUtilisateurAsync(utilisateur);
+        }
+        
+        public bool EditerUtilisateur(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.EditerUtilisateur(utilisateur);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditerUtilisateurAsync(TestCalculatrice.BDDservice.FicheUtilisateurs utilisateur) {
+            return base.Channel.EditerUtilisateurAsync(utilisateur);
         }
     }
 }

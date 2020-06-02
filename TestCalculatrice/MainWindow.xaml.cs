@@ -62,5 +62,20 @@ namespace TestCalculatrice
             ((MainCalculatriceViewModel)this.DataContext).Utilisateur = fa;
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EcranUtilisateur ecran = new EcranUtilisateur();
+            ((EcranUtilisateurViewModel)ecran.DataContext).Utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
+            this.Hide();
+            ecran.ShowDialog();
+            using (var bdd = new Service1Client())
+            {
+                ((MainCalculatriceViewModel)this.DataContext).ListeUtilisateur = new ObservableCollection<FicheUtilisateurs>(bdd.GetUtilisateurs());
+                int a = 1;
+             }
+            
+            this.Show();
+        }
     }
 }

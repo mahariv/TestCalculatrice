@@ -65,6 +65,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Ecran Utilisateur\EcranUtilisateur.xaml.cs">
+      <DependentUpon>EcranUtilisateur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ecran Utilisateur\EcranUtilisateurViewModel.cs" />
     <Compile Include="temp%28supp%29\MainCalculatrice.xaml.cs">
       <DependentUpon>MainCalculatrice.xaml</DependentUpon>
     </Compile>
@@ -74,6 +78,10 @@
     </Compile>
     <Compile Include="1.Class\RelayCommand.cs" />
     <Page Include="Config.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ecran Utilisateur\EcranUtilisateur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,13 +136,13 @@
     <None Include="Connected Services\BDDservice\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BDDservice\TestCalculatrice.BDDservice.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\BDDservice\TestCalculatrice.BDDservice.FicheOperations.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BDDservice\TestCalculatrice.BDDservice.FicheUtilisateurs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BDDservice\TestCalculatrice.BDDservice.Utilisateurs.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

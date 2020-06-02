@@ -7,18 +7,6 @@
       <xsd:import schemaLocation="http://localhost:51520/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_AddOperation_InputMessage">
     <wsdl:part name="parameters" element="tns:AddOperation" />
   </wsdl:message>
@@ -49,15 +37,37 @@
   <wsdl:message name="IService1_GetOperation_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOperationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AjoutUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:AjoutUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AjoutUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AjoutUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RecupUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecupUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RecupUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecupUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerifUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerifUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupprimerUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupprimerUtilisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditerUtilisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditerUtilisateur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditerUtilisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditerUtilisateurResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="AddOperation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddOperation" message="tns:IService1_AddOperation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddOperationResponse" message="tns:IService1_AddOperation_OutputMessage" />
@@ -78,27 +88,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOperation" message="tns:IService1_GetOperation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOperationResponse" message="tns:IService1_GetOperation_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AjoutUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AjoutUtilisateur" message="tns:IService1_AjoutUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AjoutUtilisateurResponse" message="tns:IService1_AjoutUtilisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecupUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RecupUtilisateur" message="tns:IService1_RecupUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RecupUtilisateurResponse" message="tns:IService1_RecupUtilisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerifUtilisateur" message="tns:IService1_VerifUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerifUtilisateurResponse" message="tns:IService1_VerifUtilisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SupprimerUtilisateur" message="tns:IService1_SupprimerUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SupprimerUtilisateurResponse" message="tns:IService1_SupprimerUtilisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditerUtilisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditerUtilisateur" message="tns:IService1_EditerUtilisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditerUtilisateurResponse" message="tns:IService1_EditerUtilisateur_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="AddOperation">
       <soap:operation soapAction="http://tempuri.org/IService1/AddOperation" style="document" />
       <wsdl:input>
@@ -137,6 +149,51 @@
     </wsdl:operation>
     <wsdl:operation name="GetOperation">
       <soap:operation soapAction="http://tempuri.org/IService1/GetOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/AjoutUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecupUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/RecupUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerifUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/SupprimerUtilisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditerUtilisateur">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditerUtilisateur" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

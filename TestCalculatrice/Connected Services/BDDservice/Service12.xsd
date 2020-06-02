@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:51520/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" />
-  <xs:element name="GetData">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="value" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataUsingDataContract">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataUsingDataContractResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="AddOperation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q3:FicheUtilisateurs" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q1:FicheUtilisateurs" />
         <xs:element minOccurs="0" name="operation" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -47,8 +19,8 @@
   <xs:element name="RemoveOperation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q4:FicheUtilisateurs" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="operation" nillable="true" type="q5:FicheOperations" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q2:FicheUtilisateurs" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="operation" nillable="true" type="q3:FicheOperations" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +34,7 @@
   <xs:element name="RemoveAllOperation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q6:FicheUtilisateurs" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q4:FicheUtilisateurs" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +53,7 @@
   <xs:element name="GetUtilisateursResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetUtilisateursResult" nillable="true" type="q7:ArrayOfFicheUtilisateurs" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetUtilisateursResult" nillable="true" type="q5:ArrayOfFicheUtilisateurs" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -95,7 +67,77 @@
   <xs:element name="GetOperationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetOperationResult" nillable="true" type="q8:ArrayOfFicheOperations" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="GetOperationResult" nillable="true" type="q6:ArrayOfFicheOperations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjoutUtilisateur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q7:FicheUtilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjoutUtilisateurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AjoutUtilisateurResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupUtilisateur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q8:FicheUtilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecupUtilisateurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="RecupUtilisateurResult" nillable="true" type="q9:Utilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifUtilisateur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q10:FicheUtilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifUtilisateurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifUtilisateurResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupprimerUtilisateur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q11:FicheUtilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupprimerUtilisateurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SupprimerUtilisateurResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditerUtilisateur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServiceWCFBDD" minOccurs="0" name="utilisateur" nillable="true" type="q12:FicheUtilisateurs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditerUtilisateurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditerUtilisateurResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

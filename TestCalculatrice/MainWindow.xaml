@@ -44,6 +44,7 @@
                 </StackPanel>
             </Label.Content>
         </Label>
+        <Button Content="Editer client" Click="Button_Click" HorizontalAlignment="Left" Margin="35,344,0,0" VerticalAlignment="Top" Width="163" Height="28"/>
 
     </Grid>
 </Window>
