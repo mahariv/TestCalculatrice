@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestCalculatrice.BDDservice;
 
 namespace TestCalculatrice
 {
@@ -21,26 +23,44 @@ namespace TestCalculatrice
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainCalculatrice calculatrice;
-        public MainWindow()
-        {
-            
-            Loaded += MainWindow_Loaded;
 
+        public MainWindow() 
+        {
             InitializeComponent();
-            
-            
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+
+        private void OpenCalculatrice_Click(object sender, RoutedEventArgs e)
         {
-            calculatrice = new MainCalculatrice();
-            
-            calculatrice.Show();
-            this.Close();
+
+            FicheUtilisateurs utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
+            //on verifie que l'utilisateur est selectionné ou qu'il existe
+            if (((MainCalculatriceViewModel)this.DataContext).ListeUtilisateur.Contains(utilisateur))
+            {
+                Calculate page = new Calculate();
+
+                using (var bdd = new Service1Client())
+                {
+                    String nomUtilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur.Nom;
+                    ((CalculatriceViewModel)page.DataContext).Utilisateur = utilisateur;
+                    ((CalculatriceViewModel)page.DataContext).ListeOperation = new ObservableCollection<FicheOperations>(bdd.GetOperation(nomUtilisateur));
+                }
+                page.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez selectionner un utilisateur pour continuer");
+            }
 
         }
 
+        private void ListBoxItem_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ListBoxItem ab = (ListBoxItem)sender;
+            FicheUtilisateurs fa = (FicheUtilisateurs)ab.Content;
 
+            ((MainCalculatriceViewModel)this.DataContext).Utilisateur = fa;
+
+        }
     }
 }

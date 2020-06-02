@@ -22,32 +22,23 @@ namespace TestCalculatrice
     /// <summary>
     /// Logique d'interaction pour MainCalculatrice.xaml
     /// </summary>
-    public partial class MainCalculatrice : Window, INotifyPropertyChanged
+    public partial class MainCalculatrice : Window
 
     {
-        Calculate page;
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void NotifyChange([CallerMemberName] string str = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(str));
-        }
-
         public MainCalculatrice()
         {
-            
             InitializeComponent();
         }
 
         private void OpenCalculatrice_Click(object sender, RoutedEventArgs e)
         {
-            page = new Calculate();
+            
             FicheUtilisateurs utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
             //on verifie que l'utilisateur est selectionné ou qu'il existe
             if (((MainCalculatriceViewModel)this.DataContext).ListeUtilisateur.Contains(utilisateur))
             {
+                Calculate page = new Calculate();
+
                 using (var bdd = new Service1Client())
                 {
                     String nomUtilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur.Nom;
