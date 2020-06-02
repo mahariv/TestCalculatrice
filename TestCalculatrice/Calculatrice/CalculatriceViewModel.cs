@@ -329,6 +329,7 @@ namespace TestCalculatrice
 
         #endregion
 
+        
         #region button of operation
 
         private ICommand buttonEgal;

@@ -44,13 +44,22 @@ namespace TestCalculatrice
         private void OpenCalculatrice_Click(object sender, RoutedEventArgs e)
         {
             page = new Calculate();
-            using (var bdd = new Service1Client())
+            FicheUtilisateurs utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
+            //on verifie que l'utilisateur est selectionné ou qu'il existe
+            if (((MainCalculatriceViewModel)this.DataContext).ListeUtilisateur.Contains(utilisateur))
             {
-                String nomUtilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur.Nom;
-                ((CalculatriceViewModel)page.DataContext).Utilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur;
-                ((CalculatriceViewModel)page.DataContext).ListeOperation = new ObservableCollection<FicheOperations>(bdd.GetOperation(nomUtilisateur));
+                using (var bdd = new Service1Client())
+                {
+                    String nomUtilisateur = ((MainCalculatriceViewModel)this.DataContext).Utilisateur.Nom;
+                    ((CalculatriceViewModel)page.DataContext).Utilisateur = utilisateur;
+                    ((CalculatriceViewModel)page.DataContext).ListeOperation = new ObservableCollection<FicheOperations>(bdd.GetOperation(nomUtilisateur));
+                }
+                page.Show();
             }
-            page.Show();
+            else
+            {
+                MessageBox.Show("Vous devez selectionner un utilisateur pour continuer");
+            }
             
         }
 
