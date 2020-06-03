@@ -28,5 +28,29 @@ namespace TestCalculatrice
         {
             this.Close();
         }
+
+        public void ShowEditionButton()
+        {
+            MasquerBoutton(BoutonReset);
+            MasquerBoutton(BouttonAjout);
+            //MasquerBoutton(BouttonQuitter);
+            //MasquerBoutton(BouttonSauvegarde);
+            //MasquerBoutton(BouttonSupprimer);
+        }
+
+        public void ShowAjoutButton()
+        {
+            //MasquerBoutton(BoutonReset);
+            //MasquerBoutton(BouttonAjout);
+            //MasquerBoutton(BouttonQuitter);
+            MasquerBoutton(BouttonSauvegarde);
+            MasquerBoutton(BouttonSupprimer);
+        }
+
+        public void MasquerBoutton(Button mybutton)
+        {
+            mybutton.IsEnabled = false;
+            mybutton.Visibility = Visibility.Hidden;
+        }
     }
 }

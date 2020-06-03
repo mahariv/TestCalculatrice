@@ -53,7 +53,6 @@ namespace TestCalculatrice
                             }
                             // fonction qui verifie que l'utilisateur n'existe pas deja
                             // fonction qui ajoute l'utilisateur
-                            // Fonction de mise a jour de la table utilisateur
                         }
                         );
                 }
@@ -127,6 +126,8 @@ namespace TestCalculatrice
             Utilisateur.Nom = "";
             Utilisateur.Prenom = "";
         }
+
+
 
     }
 }

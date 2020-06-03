@@ -25,10 +25,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Sauvegarder" Grid.Column="6" Grid.Row="0" Command="{Binding EditerUtilisateur}"></Button>
-        <Button Content="Ajouter" Grid.Column="6" Grid.Row="2" Command="{Binding AjoutUtilisateur}"></Button>
-        <Button Content="Supprimer" Grid.Column="3" Grid.Row="4" Command="{Binding SupprimerUtilisateur}" ></Button>
-        <Button Content="Quitter" Grid.Column="3" Grid.Row="6" Click="Button_Click"></Button>
+        <Button x:Name="BouttonSauvegarde" Content="Sauvegarder" Grid.Column="6" Grid.Row="0" Command="{Binding EditerUtilisateur}"></Button>
+        <Button x:Name="BouttonAjout" Content="Ajouter" Grid.Column="6" Grid.Row="2" Command="{Binding AjoutUtilisateur}"></Button>
+        <Button x:Name="BouttonSupprimer" Content="Supprimer" Grid.Column="3" Grid.Row="4" Command="{Binding SupprimerUtilisateur}" ></Button>
+        <Button x:Name="BouttonQuitter" Content="Quitter" Grid.Column="3" Grid.Row="6" Click="Button_Click"></Button>
         <Label Content="Id :" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
         <Label Content="{Binding Utilisateur.Id, Mode=OneWay}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15"></Label>
         <Label Content="Nom :" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
@@ -37,7 +37,7 @@
         <TextBox Text="{Binding Utilisateur.Prenom, Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="150" Margin="15"></TextBox>
         <Label Content="Login :" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
         <TextBox   Text ="{Binding Utilisateur.Login, Mode=TwoWay}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="150" Margin="15"></TextBox>
-        <Button Content="Reset" Command="{Binding InitFenetre}"></Button>
+        <Button x:Name="BoutonReset" Content="Reset" Command="{Binding InitFenetre}" ></Button>
 
     </Grid>
 </Window>
